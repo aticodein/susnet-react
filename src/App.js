@@ -1,6 +1,8 @@
 import "./App.css";
+import data from "../src/downloads/tiny-tines-sunset.json";
 
 function App() {
+  console.log(data);
   return (
     <div className="App">
       <header className="App-header">
@@ -13,6 +15,9 @@ function App() {
         >
           Tines
         </a>
+        <section>
+          <p>Data should be here!</p>
+        </section>
       </header>
     </div>
   );
