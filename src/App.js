@@ -1,8 +1,12 @@
 import "./App.css";
-import data from "../src/downloads/tiny-tines-sunset.json";
+import Sunset from "../src/downloads/tiny-tines-sunset.json";
 
 function App() {
-  console.log(data);
+  const actions = Sunset.actions;
+  const name = actions;
+  const options = Sunset.options;
+  console.log(name);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +20,27 @@ function App() {
           Tines
         </a>
         <section>
-          <p>Data should be here!</p>
+          <div>
+            <table border="2">
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Url</th>
+                  <th>Message</th>
+                </tr>
+
+                {name.map((item, i) => (
+                  <tr key={i}>
+                    <td>{item.name}</td>
+                    <td>{item.type}</td>
+                    <td>{item.options.url}</td>
+                    <td>{item.options.message}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
       </header>
     </div>
